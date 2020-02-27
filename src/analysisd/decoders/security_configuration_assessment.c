@@ -1515,6 +1515,9 @@ static void HandlePoliciesInfo(Eventinfo *lf,int *socket,cJSON *event) {
         mdebug1("Retrieving policies from database.");
 
         int result_db = FindPoliciesIds(lf,socket,policies_ids);
+
+        assert(policies_ids);
+
         switch (result_db)
         {
             case -1:
